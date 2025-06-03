@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "TapToPay",
+    "slug": "TapToPay",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.saturnoconsulting.TapToPay"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.saturnoconsulting.TapToPay"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "@stripe/stripe-terminal-react-native",
+        {
+          "bluetoothBackgroundMode": true,
+          "locationWhenInUsePermission": "Location access is required in order to accept payments.",
+          "bluetoothPeripheralPermission": "Bluetooth access is required in order to connect to supported bluetooth card readers.",
+          "bluetoothAlwaysUsagePermission": "This app uses Bluetooth to connect to supported card readers."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static",
+            "entitlements": "ios/TapToPay/TapToPay.entitlements"
+          },
+          "android": {
+            "minSdkVersion": 26
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "acadc1af-dac5-4d67-89d0-8e22fdf11336"
+      }
+    }
+  }
+}
